@@ -8,6 +8,10 @@ const userService= new UserService(UserModel);
 router.post('/',async(req,res)=>{
     const body= req.body;
     const user= await userService.create(body);
+    console.log("-------------------User-------------------");
+    console.log(user);
+    console.log("-------------------End User-------------------");
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(201).send(user);
 })
 
